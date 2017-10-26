@@ -1,3 +1,12 @@
 .item{
-  
+  display:flex;
+  > * {
+    flex: 1 1 auto;
+  }
+
+  &[data-done="true"]{
+    color:grey;
+    font-style:italic;
+    text-decoration:line-through;
+  }
 }

@@ -1,21 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Item from '../Item';
 
-import styles from './Item.scss';
+import styles from './ItemList.scss';
 
-export const ItemList = ({items}) => (
-  <ul>
-    <li>
-      {items.map((item, index) => (
-        <li key={index}>
-          <Item {...item}/>
-        </li>
-      ))}
-    </li>
+export const ItemList = ({items, onTextChange, onSetDone, onRemove}) => (
+  <ul className={styles.itemlist}>
+    {items.map((item, index) => (
+      <li key={index}>
+        <Item {...item}
+          onDoneChange={flag => onSetDone(index, flag)}
+          onRemove={() => onRemove(index)}/>
+      </li>
+    ))}
   </ul>
 );
-ItemList.propTypes = {
+ItemList.defaultProps = {
+  items: []
 };
 export default ItemList;
