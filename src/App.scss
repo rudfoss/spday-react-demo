@@ -1,0 +1,23 @@
+@import '~@dnvgl/veracity-common/es/styles/_normalize';
+@import '~@dnvgl/veracity-common/es/fonts/_fonts_from_cdn';
+
+.root{
+  display:flex;
+  align-items:stretch;
+  min-height:100%;
+}
+.nav{
+  flex:0 1 auto;
+  z-index:1;
+}
+.section{
+  flex:1 1 auto;
+}
+
+:global(html), :global(body){
+  height:100%;
+}
+
+:global #app{
+  height:100%;
+}
