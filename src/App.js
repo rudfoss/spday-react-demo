@@ -42,6 +42,9 @@ export class App extends Component{
       items: newItems
     });
   }
+  dumpState(){
+    console.log(JSON.stringify(this.state, null, 2));
+  }
 
   render(){
     const {items} = this.state;
@@ -53,6 +56,8 @@ export class App extends Component{
           items={items}
           onSetDone={(index, flag) => this.onSetDone(index, flag)}
           onRemove={index => this.onRemove(index)}/>
+        
+        <button onClick={() => this.dumpState()}>Dump state</button>
       </div>
     );
   }
